@@ -13,14 +13,30 @@
           <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
             Job Title
           </th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            Frecuency
+          </th>
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
         <% @people.each do |person| %>
           <tr class="px-6 py-4 whitespace-nowrap">
             <td class="p-2"><%= person.display_name %></td>
-            <td class="p-2"><%= person.email_address %></td>
+            <td class="p-2">
+              <%= person.email_address %>
+              <div id="<%= person.id %>" class="hidden">
+                <%= person.frecuency %>
+              </div>
+            </td>
             <td class="p-2"><%= person.title %></td>
+            <td class="p-2">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded"
+                      data-controller="frecuency"
+                      data-action="click->frecuency#show"
+                      data-frecuency-id-value="<%= person.id %>">
+                Show Frecuency
+              </button>
+            </td>
           </tr>
         <% end %>
       </tbody>

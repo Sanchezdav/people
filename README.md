@@ -1,24 +1,11 @@
-# README
+# People
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Stack
 
-Things you may want to cover:
+- Ruby 2.7
+- Rails 6.1
+- Stimulus
 
-* Ruby version
+## Development
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To start with the application is necessary to export the `API_KEY` with this command `export API_KEY=<API KEY>` and then just run the server with `rails s`.

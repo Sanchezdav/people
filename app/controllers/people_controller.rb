@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
   before_action :verify_api_key
 
   def index
-    @people = people_list.map { |item| Person.new.from_json(item.to_json) }
+    @people = people_list
   end
 
   private
@@ -25,6 +25,6 @@ class PeopleController < ApplicationController
       http.request(req)
     }
     parsed_response = JSON.parse(response.body)
-    parsed_response['data']
+    parsed_response['data'].map { |item| Person.new.from_json(item.to_json) }
   end
 end

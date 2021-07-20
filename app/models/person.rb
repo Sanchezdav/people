@@ -17,4 +17,19 @@ class Person
   def attributes
     instance_values
   end
+
+  def frecuency
+    characters = {}
+
+    self.email_address.split('') do |character|
+      if characters[character.to_sym].nil?
+        characters[character.to_sym] = 1
+      else
+        characters[character.to_sym] += 1
+      end
+    end
+
+    result = characters.sort_by { |_key, value| value }.reverse
+    result.map { |item| item.join(": ") }
+  end
 end
