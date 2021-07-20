@@ -1,0 +1,5 @@
+<% flash.each do |type, msg| %>
+  <div class="flex text-center p-8 <%= alert_class_for(type) %>">
+    <p class="text-lg"><%= msg %></p>
+  </div>
+<% end %>
